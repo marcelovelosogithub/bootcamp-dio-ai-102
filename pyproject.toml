@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "ntt-data-engenharia-de-dados-com-python"
+name = "AI-102"
 version = "0.1.0"
-description = ""
+description = "repositório com as resoluções dos desafios"
 authors = ["Julio Okuda <julio.okuda@gmail.com>"]
 license = "MIT"
 readme = "README.md"
