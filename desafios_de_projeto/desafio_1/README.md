@@ -35,8 +35,6 @@ desafio_1/
   - [💻 Execução Local com Poetry](#-execução-local-com-poetry)
   - [🐳 Execução com Docker](#-execução-com-docker)
 - [🎯 Conclusão e Aprendizados](#-conclusão-e-aprendizados)
-  - [🌟 Principais Conquistas:](#-principais-conquistas)
-  - [💡 Diferencial para o Mercado:](#-diferencial-para-o-mercado)
   - [🚀 Próximos Passos:](#-próximos-passos)
 
 ## 📋 Sobre o Projeto
@@ -144,17 +142,17 @@ poetry run streamlit run desafios_de_projeto/desafio_1/src/app.py
 ```bash
 cd desafios_de_projeto/desafio_1/ 
 ```
+2. Execute o comando:
+```bash
+docker-compose up --build
+```
 
+3. Acesse o app: 
+-  http://localhost:8501
 
-2. Acesse o app: http://localhost:8501
-
-3. Parar a aplicaçlão: 
+4. Parar a aplicação: 
 ```bash
 docker-compose down
-```
-6. Deletar a imagem: 
-```bash
-docker rmi tradutor-multifuncional
 ```
 
 [🔝 Voltar ao índice](#-índice)
@@ -165,18 +163,8 @@ docker rmi tradutor-multifuncional
 
 Durante o desenvolvimento deste projeto, enfrei o desafio de criar uma solução que não apenas traduzisse conteúdo, mas o fizesse de maneira inteligente e contextual. A jornada me levou a explorar diferentes APIs da Azure e integrar múltiplas tecnologias em uma única aplicação coesa.
 
-### 🌟 Principais Conquistas:
 
-Entender e saber utilizar de forma simples e eficaz os serviços da Azure IA do Azure Translator, saber comparar as diferenças de custos e casos de usos
 
-### 💡 Diferencial para o Mercado:
-
-Este projeto demonstra competências essenciais valorizadas pelo mercado:
-- Desenvolvimento Full Stack com Python e Streamlit
-- Integração com serviços cloud da Azure
-- Implementação de CI/CD com Docker
-- Práticas modernas de desenvolvimento com Poetry
-- Experiência com APIs de IA e processamento de linguagem natural
 
 ### 🚀 Próximos Passos:
 
@@ -191,9 +179,9 @@ Este projeto não é apenas uma ferramenta de tradução, mas um exemplo de como
 ---
 
 <div align="center">
-  <p>Desenvolvido com ❤️ e ☕</p>
+  <p>Desenvolvido por Julio Okuda com ❤️ e ☕</p>
   <p>
-    <a href="https://www.linkedin.com/in/seu-linkedin">LinkedIn</a> •
-    <a href="https://github.com/seu-github">GitHub</a>
+    <a href="https://www.linkedin.com/in/juliookuda/">LinkedIn</a> •
+    <a href="https://github.com/Jcnok">GitHub</a>
   </p>
 </div>
