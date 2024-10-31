@@ -34,7 +34,7 @@ class TradutorArtigos:
     
     def __init__(self):
         self.api_key = os.getenv("AZURE_OPENAI_KEY")
-        self.endpoint = "https://openai-dio-boot-east1.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"
+        self.endpoint = os.getenv("AZURE_ENDPOINT")
 
     def extrair_texto(self, url: str) -> str:
         try:
@@ -73,7 +73,7 @@ class TradutorArtigos:
                     ]
                 },    
             ],
-            "temperature": 0.7,
+            "temperature": 0.9,
             "top_p": 0.95,
             "max_tokens": 900
         }
@@ -125,7 +125,7 @@ def pagina_inicial():
     st.title("🌍 Tradutor Multifuncional")
     
     # Carregar animação
-    lottie_translate = carregar_lottie("https://lottie.host/cdc7f167-7c8a-4b67-9a5f-3db936a8cb8d/IB6FNEMBAR.json")
+    lottie_translate = carregar_lottie("https://lottie.host/e61f4b1a-23b5-4f25-b0f8-ec1f3569f717/1EfdaRqh4y.json")
     st_lottie(lottie_translate, height=300)
     
     st.markdown("""
@@ -142,7 +142,7 @@ def pagina_inicial():
     ### Tecnologias Utilizadas
     
     #### Tradutor de Artigos:
-    - Azure OpenAI GPT-4
+    - Azure OpenAI GPT-4o mini
     - BeautifulSoup4
     - Requests
     - Streamlit
@@ -208,13 +208,21 @@ def pagina_tradutor_artigos():
                 
         except Exception as e:
             st.error(f"Ocorreu um erro: {str(e)}")
+    st.markdown("## Exemplo de uso:")
+
+    st.image(
+        "https://github.com/Jcnok/Bootcamp-Microsoft-Certification-Challenge--1-AI_102/blob/master/desafios_de_projeto/desafio_1/img/tradutor_artigo.gif?raw=true",
+        width=1000,
+    ) 
+
+    st.markdown("---")
 
 def pagina_tradutor_documentos():
     """Página do tradutor de documentos."""
     st.title("📄 Tradutor de Documentos Word")
     
     # Carregar animação
-    lottie_doc = carregar_lottie("https://lottie.host/cdc7f167-7c8a-4b67-9a5f-3db936a8cb8d/IB6FNEMBAR.json")
+    lottie_doc = carregar_lottie("https://lottie.host/a4fdcc12-f826-4986-a561-6f06a3bfb1e1/kFJXH2m2jf.json")
     st_lottie(lottie_doc, height=200)
     
     st.markdown("""
@@ -242,7 +250,7 @@ def pagina_tradutor_documentos():
     with col1:
         idioma_origem = st.selectbox("🔤 Idioma de origem", list(idiomas.keys()))
     with col2:
-        idioma_destino = st.selectbox("🔤 Idioma de destino", list(idiomas.keys()))
+        idioma_destino = st.selectbox("🔤 Idioma de destino", list(idiomas.keys()), index=4)
 
     if st.button("🔄 Traduzir"):
         if arquivo is not None:
@@ -258,6 +266,10 @@ def pagina_tradutor_documentos():
                         idiomas[idioma_origem],
                         idiomas[idioma_destino]
                     )
+                    st.markdown("### Texto Original")
+                    st.text_area("texto original",texto_original, height=200)
+                    st.markdown("### Resultado da Tradução")
+                    st.text_area("tradução",traducao, height=200)
                     
                     # Criar novo documento
                     doc_traduzido = Document()
@@ -282,6 +294,16 @@ def pagina_tradutor_documentos():
         else:
             st.error("Por favor, carregue um arquivo Word.")
 
+    st.markdown("## Exemplo de uso:")
+
+    st.image(
+        "https://github.com/Jcnok/Bootcamp-Microsoft-Certification-Challenge--1-AI_102/blob/master/desafios_de_projeto/desafio_1/img/tradutor_word.gif?raw=true",
+        width=1000,
+    ) 
+
+    st.markdown("---") 
+        
+
 def main():
     """Função principal do aplicativo."""
     st.set_page_config(page_title="Tradutor Multifuncional", layout="wide")
@@ -300,14 +322,20 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.markdown("""
     ### Sobre
-    Desenvolvido com ❤️ usando:
+    Desenvolvido por Julio Okuda com ❤️ usando:
     - Streamlit
     - Azure OpenAI
     - Azure Translator
     - Python
     
     © 2024 Todos os direitos reservados
+    
+    ### Me encontre:
+    
+    - [LinkedIn](https://www.linkedin.com/in/juliookuda/)
+    - [GitHub](https://github.com/Jcnok)
     """)
+
     
     # Renderizar página selecionada
     paginas[escolha]()
