@@ -23,6 +23,10 @@
     - [🔐 4.2 Definir as Variáveis de Ambiente](#-42-definir-as-variáveis-de-ambiente)
     - [🔍 4.3 Criar a Função de Extração de Texto](#-43-criar-a-função-de-extração-de-texto)
     - [🌎 4.4 Criar a Função de Tradução de Texto](#-44-criar-a-função-de-tradução-de-texto)
+  - [Steve Jobs: O Visionário Que Misturou Espiritualidade e Tecnologia](#steve-jobs-o-visionário-que-misturou-espiritualidade-e-tecnologia)
+    - [A Jornada Espiritual de Steve Jobs 🧘‍♂️](#a-jornada-espiritual-de-steve-jobs-️)
+    - [A Interseção de Espiritualidade e Tecnologia 🌐🧘‍♂️](#a-interseção-de-espiritualidade-e-tecnologia-️)
+    - [O Legado de Steve Jobs 🍏🌟](#o-legado-de-steve-jobs-)
   - [📑 Segundo Projeto - Tradução de Documentos](#-segundo-projeto---tradução-de-documentos)
     - [🌎 5.1 Criar a Função de Tradução de Texto](#-51-criar-a-função-de-tradução-de-texto)
     - [📄 5.2 Carregar um documento word para tradução](#-52-carregar-um-documento-word-para-tradução)
@@ -160,6 +164,7 @@ Defina as variáveis de ambiente para a chave de assinatura do Azure Translator,
 load_dotenv()
 
 API_KEY = os.getenv("AZURE_OPENAI_KEY")
+API_ENDPOINT = os.getenv("AZURE_ENDPOINT")
 key = os.getenv("TRANSLATOR_API_KEY")
 endpoint = os.getenv("TRANSLATOR_ENDPOINT")
 location = os.getenv("TRANSLATOR_LOCATION")
@@ -194,12 +199,15 @@ def extract_text(url):
         return None
 extract_text(url)
 ```
+```bash
+'Steve Jobs The Visionary Who Blended Spirituality and Technology - DEV Community Skip to content Navigation menu Search Powered by Search Algolia Search Log in Create account DEV Community Close Add reaction Like Unicorn Exploding Head Raised Hands Fire Jump to Comments Save More... Copy link Copy link Copied to Clipboard Share to Twitter Share to LinkedIn Share to Reddit Share to Hacker News Share to Facebook Share to Mastodon Report Abuse Eric Dequevedo Posted on Jun 28 • Originally published at rics-notebook.com Steve Jobs The Visionary Who Blended Spirituality and Technology # stevejobs # apple # iphone # spirituality Steve Jobs: The Visionary Who Blended Spirituality and Technology 🍎🕉️ Steve Jobs,'
+```
 
 [⬆️ voltar ao Índice](#️-índice)
 
 ###  🌎 4.4 Criar a Função de Tradução de Texto
 
-Crie uma função Python chamada `translate_article()` para traduzir o texto extraído usando o Azure Translator. Esta função deve:
+Crie uma função Python chamada `translate_article()` para traduzir o texto extraído usando o Azure OpenAI GPT-4o mini. Esta função deve:
 
 *   Definir o endpoint da API de tradução.(ENDPOINT)
 *   Criar um cabeçalho de solicitação com a chave de assinatura.(headers)
@@ -242,7 +250,7 @@ def translate_article(text, lang):
       "max_tokens": 900
     }
     
-    ENDPOINT = "https://openai-dio-boot-east1.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-02-15-preview"
+    ENDPOINT = API_ENDPOINT
     
     # Send request
     try:
@@ -260,6 +268,9 @@ def translate_article(text, lang):
 ```python
 translate_article("The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt","português")
 ```
+```bash
+'O futuro pertence àqueles que acreditam na beleza de seus sonhos. - Eleanor Roosevelt'
+```
 
 *   **Agora vamos testar com o artigo:** 'https://dev.to/eric_dequ/steve-jobs-the-visionary-who-blended-spirituality-and-technology-3ppi'
 
@@ -269,6 +280,32 @@ text = extract_text(url)
 artigo = translate_article(text,"português")
 print(artigo)
 ```
+## Steve Jobs: O Visionário Que Misturou Espiritualidade e Tecnologia
+🍎🕉️ Steve Jobs, cofundador da Apple e mente por trás de produtos revolucionários como o iPhone, não era apenas um visionário da tecnologia, mas também uma pessoa profundamente espiritual. Sua combinação única de espiritualidade oriental e inovação ocidental permitiu que ele criasse tecnologia que não era apenas funcional, mas também incrivelmente legal e desejável. 📱✨
+
+### A Jornada Espiritual de Steve Jobs 🧘‍♂️
+Desde jovem, Steve Jobs foi atraído pela espiritualidade e filosofia orientais. Ele passou sete meses viajando pela Índia em 1974, buscando iluminação espiritual e estudando o budismo. Essa experiência teve um impacto profundo em sua vida e, mais tarde, influenciou sua abordagem aos negócios e ao design de produtos. 🌍🙏
+
+Um dos pontos de virada mais significativos na jornada espiritual de Jobs foi seu encontro com o livro "Be Here Now" de Ram Dass. O livro, que mistura espiritualidade oriental com psicologia ocidental, ressoou profundamente com Jobs e se tornou uma força orientadora em sua vida. 📖💡
+
+As buscas espirituais de Jobs também o levaram a desenvolver uma conexão com o guru indiano Neem Karoli Baba, também conhecido como Maharaj-ji. Embora Jobs nunca tenha conhecido Maharaj-ji pessoalmente, ele sentiu uma forte conexão espiritual com o guru e buscou sua orientação através de intermediários. Esse relacionamento ajudou Jobs a se manter centrado e focado enquanto navegava pelos desafios de liderar uma empresa de tecnologia em rápido crescimento. 🕉️💼
+
+### A Interseção de Espiritualidade e Tecnologia 🌐🧘‍♂️
+As crenças espirituais de Steve Jobs influenciaram profundamente sua abordagem à tecnologia e ao design. Ele acreditava que a tecnologia não deveria ser apenas funcional, mas também esteticamente agradável e intuitiva de usar. A visão de Jobs era criar produtos que enriquecessem a vida das pessoas e trouxessem alegria, em vez de simplesmente servir como ferramentas. 🎨💻
+
+O iPhone, talvez a criação mais icônica de Jobs, exemplifica perfeitamente essa filosofia. Com seu design elegante, interface amigável e recursos poderosos, o iPhone revolucionou a indústria de smartphones e estabeleceu um novo padrão para a tecnologia móvel. A atenção aos detalhes de Jobs e seu foco na experiência do usuário, informados por sua perspectiva espiritual, fizeram do iPhone não apenas um dispositivo, mas uma declaração de estilo e individualidade. 📱👨‍💻
+
+A abordagem espiritual de Jobs à liderança também o diferenciou de outros CEOs de tecnologia. Ele fomentou uma cultura de inovação e criatividade na Apple, encorajando sua equipe a pensar de forma diferente e ultrapassar limites. A crença de Jobs no poder da intuição e sua capacidade de "pensar diferente" permitiram que ele antecipasse e moldasse o futuro da tecnologia, em vez de simplesmente reagir às tendências de mercado. 🔮💡
+
+### O Legado de Steve Jobs 🍏🌟
+O impacto de Steve Jobs no mundo da tecnologia e sua abordagem única de misturar espiritualidade com inovação continuam a inspirar e influenciar empreendedores e designers ao redor do mundo. Sua visão para a Apple e seu compromisso em criar produtos que enriquecem a vida das pessoas deixaram uma marca indelével na indústria de tecnologia. 🌍💻
+
+Além de suas conquistas tecnológicas, a jornada espiritual de Jobs e sua dedicação ao crescimento pessoal e autodescoberta servem como um lembrete de que sucesso e paz interior não são mutuamente exclusivos. Ao abraçar sua espiritualidade e permitir que ela guiasse seu trabalho, Jobs conseguiu realizar coisas notáveis enquanto permanecia fiel a si mesmo e a seus valores. 🧘‍♂️🏆
+
+Ao refletirmos sobre a vida e o legado de Steve Jobs, podemos nos inspirar em sua capacidade de misturar mundos aparentemente distintos – espiritualidade e tecnologia – em um todo harmonioso. Ao seguir nossos próprios caminhos de autodescoberta e permitir que nossos valores mais profundos informem nosso trabalho, também podemos criar produtos, serviços e experiências que não apenas mudam o mundo, mas também trazem alegria e significado para a vida das pessoas. 🌈
+
+A tradução ficou bem definida com o formato markdown se compararmos com o link do artigo: 'https://dev.to/eric_dequ/steve-jobs-the-visionary-who-blended-spirituality-and-technology-3ppi'
+
 
 [⬆️ voltar ao Índice](#️-índice)
 
