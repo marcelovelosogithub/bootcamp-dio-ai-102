@@ -1,107 +1,100 @@
-# Start Project Template
+# 🚀 Bootcamp Microsoft Certification Challenge AI-102
 
-## Requisitos
+<a href="https://www.dio.me/bootcamp/microsoft-ai-102">
+  <img src="img/badge.webp" align='center' alt="Microsoft Bootcamp logo" width="509" height="244"/>
+</a>
+<a href="https://www.dio.me/users/julio_okuda">
+  <img src="https://hermes.dio.me/public-users/julio_okuda/share/5a0d73200e1270482bb86bdeb079f23c.png" align='center' alt="drawing" width="550" heigth="250"/>
+</a>
 
-- Python 3.12
-- Poetry
+## 🎯 Sobre o Bootcamp
 
-## Como usar
+Este bootcamp oferece uma oportunidade única de aprendizado e certificação em Inteligência Artificial com a Microsoft. Os participantes terão acesso ao conteúdo completo para preparação do exame AI-102, receberão um voucher para realizar a certificação e poderão participar do Innovation Challenge Hackathon da Microsoft, que oferece um prêmio de $10.000 para os vencedores.
 
-### 1. Instale as dependências
+### ✨ Destaques do Programa:
 
-```bash
-poetry install
-```
+- 📚 Preparação completa para o exame AI-102
+- 🎫 Voucher gratuito para certificação
+- 💡 Acesso ao Hackathon da Microsoft (para certificados)
+- 👨‍🏫 Conteúdo ministrado por MVPs da Microsoft
+- ⚡ Treinamento prático com ferramentas Azure e OpenAI
+- 📊 Foco em extração de dados de textos e documentos em massa
 
-### 2. Rodar os comandos de formatação e linting
+## 🛠️ Estrutura do Bootcamp
 
-```bash
-poetry run task format
-```
+### 📌 Atividades Principais:
 
-### 3. Rodar os testes
+1. **Mentorias (Live)** 🎥
+   - Interação com especialistas do mercado
+   - Oportunidade de networking
+   - Discussões sobre carreira e tecnologia
+   
+2. **Desafios de Código** 💻
+   - Exercícios práticos
+   - Aplicação dos conhecimentos adquiridos
+   - Testes de proficiência
 
-```bash
-poetry run pytest
-```
+3. **Desafios de Projeto** 🏗️
+   - Desenvolvimento de projetos práticos
+   - Construção de portfólio
+   - Aplicação real dos conhecimentos
 
-## Estrutura do Projeto
+4. **Ranking e Premiações** 🏆
+   - Sistema de pontuação baseado em:
+     - Interações em fóruns e salas
+     - Desempenho em quizzes
+     - Qualidade do código nos desafios
 
-- `src/`: Código fonte do projeto
-- `tests/`: Testes automatizados
+## 📚 Ferramentas de Aprendizado
 
-## Integração Contínua (CI)
+### 🔧 Recursos Disponíveis:
 
-Este projeto utiliza GitHub Actions para Integração Contínua (CI). A configuração do CI está definida no arquivo `.github/workflows/python-ci.yml`, que automatiza o processo de teste e verificação de código. Abaixo estão os detalhes sobre como o CI foi configurado:
+- **Fórum**: 💬 Espaço para discussões técnicas e dúvidas
+- **Salas de Estudo**: 👥 Ambiente para networking e troca de experiências
+- **Lista de Participantes**: 📋 Acompanhamento dos colegas de turma
+- **Certificados**: 🎓 Documentação oficial das conquistas no bootcamp
 
-### 1. Configuração do CI
+## ℹ️ Informações Importantes
 
-O arquivo `.github/workflows/python-ci.yml` define um workflow que executa automaticamente o pipeline de CI para cada push para a branch `main` e para cada pull request. O workflow inclui os seguintes passos:
+- ⏰ Voucher gratuito disponibilizado em até 2 semanas após a conclusão
+- 📅 Convites para o Hackathon Microsoft começam a partir de 06/12/2024
+- 📘 Conteúdo alinhado com as últimas atualizações da certificação AI-102
 
-- **Verificação de Código**: Usa ferramentas de formatação e linting (`isort`, `black`, `flake8`) para garantir que o código esteja bem formatado e siga as melhores práticas.
-- **Execução de Testes**: Executa os testes automatizados com `pytest` para garantir que o código esteja funcionando conforme o esperado.
+## 📂 Índice de Desafios
 
-### 2. Como Funciona
+### 🚀 Desafios de Projeto
+*(A serem atualizados conforme o andamento do bootcamp)*
 
-- **Push para a Branch `main`**: Sempre que você faz um push para a branch `main`, o GitHub Actions executa o pipeline de CI definido no arquivo `python-ci.yml`. Isso inclui a instalação das dependências, formatação e linting do código, e a execução dos testes.
-- **Pull Requests**: Sempre que um pull request é criado ou atualizado, o pipeline de CI é executado para garantir que as mudanças propostas não quebrem o código existente e estejam em conformidade com as regras de formatação e linting.
+- Projeto 1: [Tradutor Multifuncional](https://github.com/Jcnok/Bootcamp-Microsoft-Certification-Challenge--1-AI_102/tree/master/desafios_de_projeto/desafio_1#-tradutor-multifuncional)
+- Projeto 2: [Nome do Projeto]()
+- Projeto 3: [Nome do Projeto]()
 
-### 3. Arquivo de Workflow CI
+### 💻 Desafios de Código
+*(A serem atualizados conforme o andamento do bootcamp)*
 
-Aqui está a configuração do workflow para referência:
+- Código 1: [Nome do Desafio]()
+- Código 2: [Nome do Desafio]()
+- Código 3: [Nome do Desafio]()
 
-```yaml
-name: Python CI
+## 🎯 Conclusão e Opinião Pessoal
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+Como profissional em constante evolução na área de tecnologia, este bootcamp representa uma oportunidade excepcional de aprimoramento em Inteligência Artificial. A combinação de aprendizado prático, certificação Microsoft e a possibilidade de participar do Hackathon não só enriquece meu portfólio, mas também demonstra meu compromisso com a excelência técnica e inovação.
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+A escolha deste bootcamp reflete minha determinação em me manter atualizado com as tecnologias mais recentes e minha busca por desafios que me permitam crescer profissionalmente. Através dele, estou desenvolvendo habilidades práticas em Azure e OpenAI, ferramentas essenciais no cenário atual de IA.
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.12  # Atualize para a versão atual do Python que você está usando
+## 📫 Contatos e Redes Sociais
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install poetry
-          poetry install
+Vamos nos conectar? Estou sempre aberto a novas oportunidades e networking! 🤝
 
-      - name: Run Linting
-        run: |
-          poetry run task format
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juliookuda/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jcnok)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:julio.okuda@gmail.com)
 
-      - name: List installed packages
-        run: |
-          poetry show
 
-      - name: Run Tests
-        run: |
-          poetry run pytest
-```
+### 🎯 Habilidades em Desenvolvimento
+![Microsoft Azure](https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
 
-### 4. Como Replicar a Configuração
+---
 
-Para replicar esta configuração de CI em outro projeto, siga estes passos:
-
-1. **Crie o Arquivo de Workflow**:
-  - No repositório do seu projeto, crie um diretório `.github/workflows/` se ainda não existir.
-  - Adicione um arquivo chamado `python-ci.yml` dentro deste diretório.
-
-2. **Adicione a Configuração ao Arquivo de Workflow**:
-  - Copie e cole a configuração YAML fornecida acima no arquivo `python-ci.yml`.
-
-3. **Configuração do Projeto**:
-  - Certifique-se de que o seu projeto utiliza `poetry` e que os comandos de formatação, linting e testes estão configurados corretamente no seu `pyproject.toml`.
-
-4. **Commit e Push**:
-  - Faça um commit e push das alterações para o repositório remoto. O GitHub Actions começará a executar o pipeline automaticamente com base na configuração fornecida..
+⭐ *Este README será atualizado regularmente com novos conteúdos e conquistas ao longo do bootcamp. Fique à vontade para entrar em contato para discussões sobre tecnologia, oportunidades de colaboração ou networking!*
