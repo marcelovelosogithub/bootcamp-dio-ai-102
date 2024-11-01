@@ -5,33 +5,38 @@
 
 ## 🗺️ Índice
 
--   **Introdução** 
-    -   [1.1 Contexto & Problema](#-1.1-Contexto-&-Problema) 
--   **Solução**
-    -   [2.1 Arquitetura & Tecnologias](#2.1-arquitetura-tecnologias)
-    -   [2.2 Resultados & Benefícios](#2.2-resultados-benefícios)
-    -   [2.3 Considerações de Custo](#2.3-considerações-de-custo)
--   **Passo a Passo Detalhado para o Desenvolvimento do Projeto** 
-    -   [3.1 Criar um Grupo de Recursos](#3.1-criar-um-grupo-de-recursos)
-    -   [3.2 Provisionar o Serviço Azure OpenAI](#3.2-provisionar-o-serviço-azure-openai)
-    -   [3.3 Implantar o Modelo GPT-4 Mini](#3.3-implantar-o-modelo-gpt-4-mini) 
-    -   [3.4 Provisionar o Serviço Azure Translator](#3.4-provisionar-o-serviço-azure-translator) 
-    -   [3.5 Obter a Chave de Assinatura e o Endpoint do Translator](#3.5-obter-a-chave-de-assinatura-e-o-endpoint-do-translator) 
--   **Primeiro Projeto - Tradução de Artigos** 
-    -   [4.1 Importar as Bibliotecas](#4.1-importar-as-bibliotecas)
-    -   [4.2 Definir as Variáveis de Ambiente](#4.2-definir-as-variáveis-de-ambiente)
-    -   [4.3 Criar a Função de Extração de Texto](#4.3-criar-a-função-de-extração-de-texto)
-    -   [4.4 Criar a Função de Tradução de Texto](#4.4-criar-a-função-de-tradução-de-texto)
--   **Segundo Projeto - Tradução de Documentos** 
-    -   [5.1 Criar a Função de Tradução de Texto](#5.1-criar-a-função-de-tradução-de-texto)
-    -   [5.2 Carregar um documento word para tradução](#5.2-carregar-um-documento-word-para-tradução)
-    -   [5.3 Criar uma função para salvar o arquivo traduzido no formato word](#5.3-criar-uma-função-para-salvar-o-arquivo-traduzido-no-formato-word)
--   **Considerações Adicionais**
-    -   [6.1 Gerenciamento de Custos](#6.1-gerenciamento-de-custos)
-    -   [6.2 Segurança](#6.2-segurança)
-    -   [6.3 Monitoramento](#6.3-monitoramento)
--   **Conclusão**
-    -   [7.1 Próximos Passos](#7.1-próximos-passos)
+
+
+- [📚 Projeto de Tradução de Artigos Técnicos e Documentos com Azure AI](#-projeto-de-tradução-de-artigos-técnicos-e-documentos-com-azure-ai)
+  - [🗺️ Índice](#️-índice)
+  - [📝 Introdução](#-introdução)
+    - [💻 1.1 Contexto \& Problema](#-11-contexto--problema)
+  - [💡Índice](#índice)
+  - [💡 Solução](#-solução)
+    - [🏗️ 2.1 Arquitetura \& Tecnologias](#️-21-arquitetura--tecnologias)
+    - [✅ 2.2 Resultados \& Benefícios](#-22-resultados--benefícios)
+    - [💲 2.3 Considerações de Custo](#-23-considerações-de-custo)
+  - [🛠️ Passo a Passo Detalhado para o Desenvolvimento do Projeto](#️-passo-a-passo-detalhado-para-o-desenvolvimento-do-projeto)
+    - [📦 3.1 Criar um Grupo de Recursos](#-31-criar-um-grupo-de-recursos)
+    - [🧠 3.2 Provisionar o Serviço Azure OpenAI](#-32-provisionar-o-serviço-azure-openai)
+    - [🤖 3.3 Implantar o Modelo GPT-4 Mini](#-33-implantar-o-modelo-gpt-4-mini)
+    - [🌎 3.4 Provisionar o Serviço Azure Translator](#-34-provisionar-o-serviço-azure-translator)
+    - [🔐 3.5 Obter a Chave de Assinatura e o Endpoint do Translator](#-35-obter-a-chave-de-assinatura-e-o-endpoint-do-translator)
+  - [📰 Primeiro Projeto - Tradução de Artigos](#-primeiro-projeto---tradução-de-artigos)
+    - [📚 4.1 Importar as Bibliotecas](#-41-importar-as-bibliotecas)
+    - [🔐 4.2 Definir as Variáveis de Ambiente](#-42-definir-as-variáveis-de-ambiente)
+    - [🔍 4.3 Criar a Função de Extração de Texto](#-43-criar-a-função-de-extração-de-texto)
+    - [🌎 4.4 Criar a Função de Tradução de Texto](#-44-criar-a-função-de-tradução-de-texto)
+  - [📑 Segundo Projeto - Tradução de Documentos](#-segundo-projeto---tradução-de-documentos)
+    - [🌎 5.1 Criar a Função de Tradução de Texto](#-51-criar-a-função-de-tradução-de-texto)
+    - [📄 5.2 Carregar um documento word para tradução](#-52-carregar-um-documento-word-para-tradução)
+    - [💾 5.3 Criar uma função para salvar o arquivo traduzido no formato word](#-53-criar-uma-função-para-salvar-o-arquivo-traduzido-no-formato-word)
+  - [💡 Considerações Adicionais](#-considerações-adicionais)
+    - [💲 6.1 Gerenciamento de Custos](#-61-gerenciamento-de-custos)
+    - [🔒 6.2 Segurança](#-62-segurança)
+    - [📊 6.3 Monitoramento](#-63-monitoramento)
+  - [🏁 Conclusão](#-conclusão)
+    - [🔜 7.1 Próximos Passos](#-71-próximos-passos)
 
 ##  📝 Introdução
 
@@ -40,7 +45,7 @@ Este projeto demonstra como traduzir artigos técnicos e documentos utilizando o
 ### 💻 1.1 Contexto & Problema 
 
 A tradução de artigos técnicos e documentos apresenta desafios específicos, como a necessidade de manter a precisão terminológica e o estilo formal da escrita técnica. A tradução manual é um processo demorado e dispendioso, especialmente para grandes volumes de conteúdo. Além disso, a tradução de documentos como arquivos Word pode ser um processo tedioso, exigindo a conversão manual do documento para um formato de texto antes da tradução.
-
+## 💡Índice
 Este projeto visa solucionar esse problema, oferecendo uma solução automatizada para a tradução de artigos técnicos e documentos, utilizando os serviços de IA da Azure.
 
 [Voltar ao Índice ⬆️](#-índice)
