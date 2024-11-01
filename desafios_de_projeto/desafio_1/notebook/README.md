@@ -44,7 +44,7 @@ A tradução de artigos técnicos e documentos apresenta desafios específicos, 
 
 Este projeto visa solucionar esse problema, oferecendo uma solução automatizada para a tradução de artigos técnicos e documentos, utilizando os serviços de IA da Azure.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ Voltar ao Índice](#🗺️-índice)
 
 ##  💡 Solução
 
@@ -379,3 +379,6 @@ Este passo a passo detalhado fornece um guia abrangente para o desenvolvimento d
 *   Criar um frontend com streamlit para demonstração do projeto;
 
 [Voltar ao Índice ⬆️](#🗺️-índice)
+
+
+[def]: #️-índice
