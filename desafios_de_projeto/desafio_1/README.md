@@ -84,9 +84,10 @@ O módulo de tradução de documentos é alimentado pela Azure Translator API, o
 
 - Python 3.12 ou superior
 - Poetry para gerenciamento de dependências
-- Conta Azure com acesso às APIs:
+- Conta Azure com acesso às APIs: 
   - Azure OpenAI
   - Azure Translator
+  - `Fiz um tutorial com o passo a passo que pode ser acessado aqui:` [passo a passo](https://github.com/Jcnok/Bootcamp-Microsoft-Certification-Challenge--1-AI_102/tree/master/desafios_de_projeto/desafio_1/notebook#passo-a-passo-detalhado-para-o-desenvolvimento-do-projeto-de-tradu%C3%A7%C3%A3o-de-artigos-t%C3%A9cnicos-com-azure-ai)
 - Docker (opcional)
 
 ## ⚙️ Instalação e Execução
