@@ -46,7 +46,7 @@ A tradução de artigos técnicos e documentos apresenta desafios específicos, 
 
 Este projeto visa solucionar esse problema, oferecendo uma solução automatizada para a tradução de artigos técnicos e documentos, utilizando os serviços de IA da Azure.
 
-[⬆️ Voltar ao índice](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  💡 Solução
 
@@ -70,7 +70,7 @@ A solução consiste nos seguintes componentes:
   *   **Tradução salva:** O texto traduzido é salvo no formato word.
 
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  ✅ 2.2 Resultados & Benefícios
 
@@ -80,13 +80,13 @@ A solução automatiza o processo de tradução de artigos técnicos e documento
 *   **Acessibilidade:** Tradução de conteúdo técnico para vários idiomas, tornando-o acessível a um público mais amplo.
 *   **Consistência:** Manutenção da precisão terminológica e do estilo formal da escrita técnica.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  💲 2.3 Considerações de Custo
 
 A utilização dos serviços Azure OpenAI e Azure Translator incorre em custos, que variam de acordo com o volume de texto traduzido. É possível utilizar a camada gratuita para volumes menores de tradução. A partir de um determinado volume, a utilização do Azure OpenAI pode ser mais econômica do que o Azure Translator.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  🛠️ Passo a Passo Detalhado para o Desenvolvimento do Projeto
 
@@ -98,7 +98,7 @@ No portal do Azure, crie um grupo de recursos para organizar os recursos do proj
 
 ![passo1.1](../img/passo1.1.png)
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🧠 3.2 Provisionar o Serviço Azure OpenAI
 
@@ -108,7 +108,7 @@ Crie uma instância do serviço Azure OpenAI. Selecione a região desejada (East
 
 ![passo2.1](../img/passo2.1.png)
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🤖 3.3 Implantar o Modelo GPT-4 Mini
 
@@ -118,7 +118,7 @@ No Azure OpenAI Studio, implante o modelo GPT-4 Mini, selecionando o "Modo Bási
 
 ![passo3.1](../img/passo3.1.png)
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🌎 3.4 Provisionar o Serviço Azure Translator
 
@@ -128,7 +128,7 @@ Crie uma instância do serviço Azure Translator no mesmo grupo de recursos. Esc
 
 ![passo4.1](../img/passo4.1.png)
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🔐 3.5 Obter a Chave de Assinatura e o Endpoint do Translator
 
@@ -136,7 +136,7 @@ Acesse as chaves de assinatura e o endpoint do serviço Azure Translator. Anote 
 
 ![passo5](../img/passo5.png)
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  📰 Primeiro Projeto - Tradução de Artigos
 
@@ -149,7 +149,7 @@ import os
 from dotenv import load_dotenv
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🔐 4.2 Definir as Variáveis de Ambiente
 
@@ -165,7 +165,7 @@ endpoint = os.getenv("TRANSLATOR_ENDPOINT")
 location = os.getenv("TRANSLATOR_LOCATION")
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🔍 4.3 Criar a Função de Extração de Texto
 
@@ -195,7 +195,7 @@ def extract_text(url):
 extract_text(url)
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🌎 4.4 Criar a Função de Tradução de Texto
 
@@ -270,7 +270,7 @@ artigo = translate_article(text,"português")
 print(artigo)
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  📑 Segundo Projeto - Tradução de Documentos
 
@@ -324,7 +324,7 @@ def translate_text(text, lang_from, lang_to):
         return response[0]['translations'][0]['text']
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  📄 5.2 Carregar um documento word para tradução
 
@@ -336,7 +336,7 @@ def carregar_texto_word(arquivo):
     return texto_completo
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  💾 5.3 Criar uma função para salvar o arquivo traduzido no formato word
 
@@ -349,7 +349,7 @@ def trad_para_download(texto, nome_arquivo="tradução.docx"):
     doc.save(nome_arquivo)    
 ```
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  💡 Considerações Adicionais
 
@@ -357,19 +357,19 @@ def trad_para_download(texto, nome_arquivo="tradução.docx"):
 
 Monitore o uso dos serviços Azure OpenAI e Azure Translator para controlar os custos. Avalie a possibilidade de utilizar a camada gratuita para projetos menores ou migrar para camadas pagas para volumes maiores.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  🔒 6.2 Segurança
 
 Utilize o Azure Key Vault para armazenar as chaves de API com segurança.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ###  📊 6.3 Monitoramento
 
 Implemente o monitoramento para os serviços Azure AI, incluindo alertas para eventos importantes e análise de logs para identificar e solucionar problemas.
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
 ##  🏁 Conclusão
 
@@ -380,8 +380,5 @@ Este passo a passo detalhado fornece um guia abrangente para o desenvolvimento d
 *   Refatorar os códigos para arquivo.py;
 *   Criar um frontend com streamlit para demonstração do projeto;
 
-[Voltar ao Índice ⬆️](#🗺️-índice)
+[⬆️ voltar ao Índice](#️-índice)
 
-
-[def]: #️-índice
-[def2]: #-índice
