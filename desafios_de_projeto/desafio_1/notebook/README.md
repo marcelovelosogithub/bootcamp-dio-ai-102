@@ -38,7 +38,7 @@
 
 Este projeto demonstra como traduzir artigos técnicos e documentos utilizando os serviços de Inteligência Artificial (IA) da Microsoft Azure, incluindo o Azure OpenAI e o Azure Translator. O objetivo é automatizar e simplificar o processo de tradução de conteúdo técnico, tornando-o acessível a um público mais amplo.
 
-[⬆️ Voltar ao Índice](#-índice)
+[⬆️ Voltar ao índice](#-índice)
 
 ### 💻 1.1 Contexto & Problema 
 
@@ -46,7 +46,7 @@ A tradução de artigos técnicos e documentos apresenta desafios específicos, 
 
 Este projeto visa solucionar esse problema, oferecendo uma solução automatizada para a tradução de artigos técnicos e documentos, utilizando os serviços de IA da Azure.
 
-[⬆️ Voltar ao Índice](#-índice)
+[⬆️ Voltar ao índice](#🗺️-índice)
 
 ##  💡 Solução
 
