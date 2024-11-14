@@ -475,3 +475,4 @@ All done! ✨ 🍰 ✨
 ### Bom pessoal, agora falta criar a aplicação com streamlit, basicamente vamos usar todos os módulos para concluir o desafio até lá....🫡! 
 ### Se acharem que o conteúdo é de valia, agradeço o feedback e um voto de confiança... 🙏🏻 valeu...
 
+![img](img/tabela_credit_info.jpg)

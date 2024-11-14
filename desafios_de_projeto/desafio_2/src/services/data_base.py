@@ -1,7 +1,7 @@
 import sqlite3
 from typing import Dict, List, Optional
 
-from src.utils.Config import Config
+from utils.Config import Config
 
 
 class DataBase:
@@ -75,6 +75,25 @@ class DataBase:
             columns = [desc[0] for desc in cursor.description]
             return dict(zip(columns, row))
         return None
+    
+    def get_card_by_number(self, card_number: int) -> Optional[Dict[str, str]]:
+        """Retorna um cartão específico."""
+        query = "SELECT * FROM credit_cards WHERE card_number = ?"
+        cursor = self._execute_query(query, (card_number,))
+        row = cursor.fetchone()
+        if row:
+            columns = [desc[0] for desc in cursor.description]
+            return dict(zip(columns, row))
+        return None
+    
+    def execute_custom_query(self, query: str) -> List[Dict[str, str]]:
+        """Executa uma consulta SQL personalizada."""
+        if query.lower().startswith(('select')):
+            cursor = self._execute_query(query)
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in cursor.fetchall()]
+        else:
+            raise ValueError("Apenas consultas SELECT são permitidas")
 
     def update_card(self, card_id: int, card_info: Dict[str, str]) -> bool:
         """Atualiza um cartão existente."""

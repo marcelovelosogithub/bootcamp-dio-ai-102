@@ -1,7 +1,6 @@
 # src/services/blob_service.py
 from azure.storage.blob import BlobServiceClient
-from src.utils.Config import Config
-
+from utils.Config import Config
 
 def upload_to_blob(source, filename=None) -> str:
     """
@@ -24,6 +23,6 @@ def upload_to_blob(source, filename=None) -> str:
         Config.STORAGE_CONNECTION
     )
     blob_client = blob_service_client.get_blob_client(Config.CONTAINER_NAME, filename)
-    with open(file="data/cartao-pre-pago-standard.jpg", mode="rb") as data:
+    with open(file=source, mode="rb") as data:
         blob_client.upload_blob(data, overwrite=True)
     return blob_client.url

@@ -2,7 +2,7 @@ import pandas as pd
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.ai.documentintelligence.models import AnalyzeDocumentRequest
 from azure.core.credentials import AzureKeyCredential
-from src.utils.Config import Config
+from utils.Config import Config
 
 
 def detect_credit_card_info(card_url):
@@ -35,6 +35,6 @@ def detect_credit_card_info(card_url):
             result[key] = value["content"]
 
     # Create a Pandas DataFrame from the flattened dictionary
-    df = pd.DataFrame.from_dict(result, orient="index", columns=["value"])
+    #df = pd.DataFrame.from_dict(result, orient="index", columns=["value"])
 
-    return df
+    return result
