@@ -7,8 +7,10 @@ from utils.Config import Config
 class DataBase:
     def __init__(self):
         self.db_path = Config.DATABASE_PATH
-        # self._create_table()
+        self._create_table()
 
+    def _create_table(self):    # noqa: E501
+        """Cria a tabela credit_cards se ela não existir."""
         with sqlite3.connect(self.db_path) as conn:
             # Criar a tabela se não existir
             cursor = conn.cursor()
@@ -86,20 +88,7 @@ class DataBase:
             return dict(zip(columns, row))
         return None
     
-    def execute_custom_query(self, query: str) -> List[Dict[str, str]]:
-        """Executa uma consulta SQL personalizada."""
-        if query.lower().startswith(('select')):
-            cursor = self._execute_query(query)
-            columns = [desc[0] for desc in cursor.description]
-            return [dict(zip(columns, row)) for row in cursor.fetchall()]
-        else:
-            raise ValueError("Apenas consultas SELECT são permitidas")
-
-    def update_card(self, card_id: int, card_info: Dict[str, str]) -> bool:
-        """Atualiza um cartão existente."""
-        query = """
-        UPDATE credit_cards
-        SET card_name = ?, card_number = ?, expiry_date = ?,
+    def execute_custom_query(self, query: sgit expiry_date = ?,
             bank_name = ?, is_valid = ?, processed_at = ?
         WHERE id = ?
         """
