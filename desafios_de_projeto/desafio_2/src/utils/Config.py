@@ -27,8 +27,10 @@ class Config:
     """Nome do container no Azure Blob Storage."""
 
     # Configurações para o banco de dados SQLite
-    DATABASE_PATH: str = os.getenv("DATABASE_PATH", "../data/credit_cards.db")
+    DATABASE_PATH = "../data/credit_cards.db"
     """Caminho do arquivo do banco de dados SQLite."""
+    
+
 
     #Validação das configurações
     @classmethod
