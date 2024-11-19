@@ -106,14 +106,17 @@ AZURE_DOC_INT_ENDPOINT=seu_endpoint_doc_intelligence
 AZURE_DOC_INT_KEY=sua_chave_doc_intelligence
 AZURE_STORAGE_CONNECTION=sua_connection_string_storage
 CONTAINER_NAME=seu_container_name
-DATABASE_PATH=data/credit_cards.db
+DATABASE_PATH=../data/credit_cards.db
 ```
-
-7. Execute a aplicação:
+7. Acesse o diretório do projeto:
 ```bash
-streamlit run desafios_de_projeto/desafio_2/src/app.py
+cd desafios_de_projeto/desafio_2/
+```   
+8. Execute a aplicação:
+```bash
+streamlit run app.py
 ```
-8. Acesse: http://localhost:8501
+9. Acesse: http://localhost:8501
 
 
 ### 🐳 Execução com Docker
