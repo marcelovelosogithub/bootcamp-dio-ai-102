@@ -1,8 +1,10 @@
 """Módulo para interação com o banco de dados SQLite."""
+
 import sqlite3
 from typing import Dict, List, Optional
 
 from utils.Config import Config
+
 
 class DatabaseService:
     """Serviço para gerenciar o banco de dados SQLite."""
@@ -31,7 +33,9 @@ class DatabaseService:
             )
             conn.commit()
 
-    def _execute_query(self, query: str, params: tuple = None) -> Optional[sqlite3.Cursor]:
+    def _execute_query(
+        self, query: str, params: tuple = None
+    ) -> Optional[sqlite3.Cursor]:
         """Executa uma query SQL com tratamento de erros.
 
         Args:
@@ -67,16 +71,19 @@ class DatabaseService:
         INSERT INTO credit_cards (card_name, card_number, expiry_date, bank_name, is_valid, processed_at)
         VALUES (?, ?, ?, ?, ?, ?)
         """
-        cursor = self._execute_query(query, (
-            card_info["card_name"],
-            card_info["card_number"],
-            card_info["expiry_date"],
-            card_info["bank_name"],
-            card_info["is_valid"],
-            card_info["processed_at"],
-        ))
+        cursor = self._execute_query(
+            query,
+            (
+                card_info["card_name"],
+                card_info["card_number"],
+                card_info["expiry_date"],
+                card_info["bank_name"],
+                card_info["is_valid"],
+                card_info["processed_at"],
+            ),
+        )
         if cursor:
-          return cursor.lastrowid
+            return cursor.lastrowid
         return None
 
     def get_all_cards(self) -> List[Dict[str, str]]:
@@ -88,8 +95,8 @@ class DatabaseService:
         query = "SELECT * FROM credit_cards"
         cursor = self._execute_query(query)
         if cursor:
-          columns = [desc[0] for desc in cursor.description]
-          return [dict(zip(columns, row)) for row in cursor.fetchall()]
+            columns = [desc[0] for desc in cursor.description]
+            return [dict(zip(columns, row)) for row in cursor.fetchall()]
         return []
 
     def get_card_by_id(self, card_id: int) -> Optional[Dict[str, str]]:
@@ -101,7 +108,7 @@ class DatabaseService:
             columns = [desc[0] for desc in cursor.description]
             return dict(zip(columns, row))
         return None
-    
+
     def get_card_by_number(self, card_number: int) -> Optional[Dict[str, str]]:
         """Retorna um cartão específico."""
         query = "SELECT * FROM credit_cards WHERE card_number = ?"
@@ -111,10 +118,10 @@ class DatabaseService:
             columns = [desc[0] for desc in cursor.description]
             return dict(zip(columns, row))
         return None
-    
+
     def execute_custom_query(self, query: str) -> List[Dict[str, str]]:
         """Executa uma consulta SQL personalizada."""
-        if query.lower().startswith(('select')):
+        if query.lower().startswith(("select")):
             cursor = self._execute_query(query)
             columns = [desc[0] for desc in cursor.description]
             return [dict(zip(columns, row)) for row in cursor.fetchall()]

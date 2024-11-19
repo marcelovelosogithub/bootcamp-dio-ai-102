@@ -1,9 +1,12 @@
 """Módulo para validação e processamento de informações de cartão de crédito."""
-from azure.core.credentials import AzureKeyCredential
+
+import re
+
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.ai.documentintelligence.models import AnalyzeDocumentRequest
+from azure.core.credentials import AzureKeyCredential
 from utils.Config import Config
-import re
+
 
 class CreditCardValidator:
     """Validador de informações de cartão de crédito usando Azure Document Intelligence."""
@@ -11,7 +14,9 @@ class CreditCardValidator:
     def __init__(self):
         """Inicializa o validador com as credenciais da Azure."""
         self.credential = AzureKeyCredential(Config.AZURE_DOC_INT_KEY)
-        self.document_client = DocumentIntelligenceClient(Config.AZURE_DOC_INT_ENDPOINT, self.credential)
+        self.document_client = DocumentIntelligenceClient(
+            Config.AZURE_DOC_INT_ENDPOINT, self.credential
+        )
 
     def _validate_card_number(self, card_number: str) -> bool:
         """Valida o formato do número do cartão de crédito.
@@ -46,18 +51,20 @@ class CreditCardValidator:
         Returns:
             Um dicionário com o resultado da validação ('is_valid': True/False).
         """
-        card_number = card_info.get('card_number', '').replace(" ", "")
-        expiration_date = card_info.get('expiry_date', '')
+        card_number = card_info.get("card_number", "").replace(" ", "")
+        expiration_date = card_info.get("expiry_date", "")
 
         # Verifique se cada campo de informação foi encontrado e validado
         if not card_number or not expiration_date:
             print("Número do cartão ou data de expiração não fornecidos.")
             return {"is_valid": False}
 
-        is_valid = all([
-            self._validate_card_number(card_number),
-            self._validate_expiration_date(expiration_date)
-        ])
+        is_valid = all(
+            [
+                self._validate_card_number(card_number),
+                self._validate_expiration_date(expiration_date),
+            ]
+        )
         return {"is_valid": is_valid}
 
     def detect_credit_card_info_from_url(self, card_url: str) -> dict:
@@ -77,9 +84,11 @@ class CreditCardValidator:
                 fields = document.fields
                 return {
                     "card_name": fields.get("CardHolderName", {}).get("content", ""),
-                    "card_number": fields.get("CardNumber", {}).get("content", "").replace(" ", ""),
+                    "card_number": fields.get("CardNumber", {})
+                    .get("content", "")
+                    .replace(" ", ""),
                     "expiry_date": fields.get("ExpirationDate", {}).get("content", ""),
-                    "bank_name": fields.get("IssuingBank", {}).get("content", "")
+                    "bank_name": fields.get("IssuingBank", {}).get("content", ""),
                 }
             return None  # Nenhum documento encontrado
         except Exception as e:
