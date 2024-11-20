@@ -108,15 +108,17 @@ AZURE_STORAGE_CONNECTION=sua_connection_string_storage
 CONTAINER_NAME=seu_container_name
 DATABASE_PATH=../data/credit_cards.db
 ```
+* **Caso tenha dificuldades fiz um guia de como obter as credenciais aqui:**
+  
 7. Acesse o diretório do projeto:
 ```bash
 cd desafios_de_projeto/desafio_2/
 ```   
-8. Execute a aplicação:
+1. Execute a aplicação:
 ```bash
 streamlit run app.py
 ```
-9. Acesse: http://localhost:8501
+1. Acesse: http://localhost:8501
 
 
 ### 🐳 Execução com Docker
