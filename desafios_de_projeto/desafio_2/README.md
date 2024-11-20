@@ -108,7 +108,7 @@ AZURE_STORAGE_CONNECTION=sua_connection_string_storage
 CONTAINER_NAME=seu_container_name
 DATABASE_PATH=../data/credit_cards.db
 ```
-* **Caso tenha dificuldades fiz um guia de como obter as credenciais aqui:**
+* **Caso tenha dificuldades fiz um guia de como obter as credenciais aqui:[guia passo a passo](https://github.com/Jcnok/Bootcamp-Microsoft-Certification-Challenge--1-AI_102/blob/master/desafios_de_projeto/desafio_2/azure_services_guide.md)**
   
 7. Acesse o diretório do projeto:
 ```bash
