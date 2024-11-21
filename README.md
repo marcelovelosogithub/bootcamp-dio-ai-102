@@ -4,7 +4,7 @@
   <img src="img/badge.webp" alt="Microsoft Bootcamp logo" style="width: 40%; margin: 0 5px;" />
 </a>
 <a href="https://www.dio.me/users/marcelo_veloso">
-  <img src="https://hermes.dio.me/public-users/julio_okuda/share/5a0d73200e1270482bb86bdeb079f23c.png" alt="drawing" style="width: 55%; margin: 0 5px;" />
+  <img src="https://hermes.dio.me/public-users/marcelo_veloso/share/2364199caaf475cf8c6d3b744a38b37d.png" alt="drawing" style="width: 55%; margin: 0 5px;" />
 </a>
 
 ## 🎯 Sobre o Bootcamp
